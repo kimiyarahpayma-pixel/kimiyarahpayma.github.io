@@ -14,75 +14,113 @@ box-sizing: border-box;
 body {
 margin: 0;
 background: #f4f1ec;
-color: #171512;
-font-family: Arial, sans-serif;
+color: #171717;
+font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
-padding: 28px 35px;
+padding: 28px 34px;
 display: flex;
 justify-content: space-between;
 align-items: center;
 }
 
-.logo {
-font-size: 15px;
+.name {
+font-size: 14px;
 letter-spacing: 0.08em;
+font-weight: bold;
 }
 
 nav a {
-color: inherit;
+color: #171717;
 text-decoration: none;
-margin-left: 24px;
 font-size: 12px;
-letter-spacing: 0.08em;
+letter-spacing: 0.12em;
+margin-left: 28px;
 }
 
-main {
-padding: 90px 35px 150px;
-}
-
-h1 {
-margin: 0 0 100px;
-font-size: clamp(60px, 12vw, 170px);
-line-height: 0.85;
-font-weight: 400;
-letter-spacing: -0.07em;
-}
-
-.work {
-margin-bottom: 130px;
-max-width: 900px;
-}
-
-.work img {
-width: 100%;
-display: block;
-height: auto;
-}
-
-.info {
-margin-top: 20px;
-display: flex;
-justify-content: space-between;
-font-size: 12px;
-letter-spacing: 0.04em;
-}
-
-.title {
-font-size: 17px;
-margin-bottom: 6px;
-}
-
-.year {
-font-size: 11px;
+nav a:hover {
 opacity: 0.5;
 }
 
+main {
+padding: 70px 34px 120px;
+max-width: 1200px;
+margin: auto;
+}
+
+h1 {
+font-size: clamp(48px, 9vw, 120px);
+line-height: 0.85;
+margin: 0 0 90px;
+font-weight: 900;
+letter-spacing: -0.06em;
+}
+
+.work {
+margin-bottom: 140px;
+}
+
+.work-image {
+width: 100%;
+display: block;
+}
+
+.work-info {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+margin-top: 18px;
+gap: 30px;
+}
+
+.work-title {
+font-size: 18px;
+font-weight: bold;
+}
+
+.work-details {
+font-size: 12px;
+line-height: 1.6;
+text-align: right;
+letter-spacing: 0.03em;
+}
+
 footer {
-padding: 35px;
+padding: 40px 34px;
 font-size: 11px;
-letter-spacing: 0.06em;
+letter-spacing: 0.08em;
+}
+
+@media (max-width: 700px) {
+header {
+padding: 22px 20px;
+}
+
+nav a {
+margin-left: 15px;
+}
+
+main {
+padding: 50px 20px 80px;
+}
+
+h1 {
+margin-bottom: 60px;
+}
+
+.work-info {
+display: block;
+}
+
+.work-details {
+text-align: left;
+margin-top: 8px;
+}
+
+.work {
+margin-bottom: 90px;
+}
 }
 </style>
 </head>
@@ -90,36 +128,34 @@ letter-spacing: 0.06em;
 <body>
 
 <header>
-
-<div class="logo">
-KIMIYA RAHPAYMA
-</div>
+<div class="name">KIMIYA RAHPAYMA</div>
 
 <nav>
 <a href="index.html">HOME</a>
 <a href="works.html">WORKS</a>
-<a href="#">ABOUT</a>
-<a href="#">CONTACT</a>
 </nav>
-
 </header>
 
 <main>
 
-<h1>WORKS.</h1>
+<h1>WORKS</h1>
 
 <section class="work">
 
-<img src="./IMG_4916.JPG" alt="Becoming of the Sleeping Spiral">
+<img
+class="work-image"
+src="./IMG_4916.JPG"
+alt="Becoming of the Sleeping Spiral — Kimiya Rahpayma"
+>
 
-<div class="info">
+<div class="work-info">
 
-<div>
-<div class="title">Becoming of the Sleeping Spiral</div>
-<div class="year">2025</div>
+<div class="work-title">
+Becoming of the Sleeping Spiral
 </div>
 
-<div>
+<div class="work-details">
+2025<br>
 Sculpture
 </div>
 
@@ -130,7 +166,7 @@ Sculpture
 </main>
 
 <footer>
-© KIMIYA RAHPAYMA
+© Kimiya Rahpayma
 </footer>
 
 </body>
