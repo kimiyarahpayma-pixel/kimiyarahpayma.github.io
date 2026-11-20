@@ -95,7 +95,31 @@ align-items: flex-start;
 margin-top: 18px;
 gap: 30px;
 }
+.work-note {
+width: 32%;
+font-family: "Cormorant Garamond", serif;
+font-size: 22px;
+line-height: 1.5;
+font-style: italic;
+color: #eee8e2;
+opacity: 0.85;
+}
+  .image-with-note {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 50px;
+margin-top: 80px;
+}
 
+.image-with-note .work-image {
+width: 65%;
+margin: 0;
+}
+
+.image-with-note .work-note {
+width: 30%;
+}
 .work-title {
 font-family: "Cormorant Garamond", serif;
 font-size: 26px;
@@ -119,7 +143,18 @@ font-size: 11px;
 letter-spacing: 0.08em;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 700px) {.image-with-note {
+gap: 20px;
+}
+
+.image-with-note .work-image {
+width: 65%;
+}
+
+.image-with-note .work-note {
+width: 35%;
+font-size: 17px;
+}
 header {
 padding: 22px 20px;
 }
@@ -175,11 +210,20 @@ class="work-image"
 src="./IMG_6918.jpg"
 alt="My Wandering Head — Kimiya Rahpayma, another view"
 >
-  <img
+<div class="image-with-note">
+
+<div class="work-note">
+Some things we make to resemble ourselves.<br><br>
+Some things we make to hide inside.
+</div>
+
+<img
 class="work-image"
 src="./IMG_1903.jpeg"
 alt="My Wandering Head — Kimiya Rahpayma, another view"
 >
+
+</div>
   <img
 class="work-image"
 src="./unnamed.jpg"
