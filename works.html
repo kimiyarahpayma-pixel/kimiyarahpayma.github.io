@@ -189,9 +189,49 @@ margin-top: 8px;
 margin-bottom: 90px;
 }
 }
-</style>
-</head>
+  <div class="gallery">
 
+<button class="gallery-arrow prev" onclick="changeImage(-1)">&#8592;</button>
+
+<img class="gallery-image" src="./IMG_6918.jpg" id="galleryImage" alt="My Wandering Head">
+
+<button class="gallery-arrow next" onclick="changeImage(1)">&#8594;</button>
+
+<div class="gallery-counter" id="galleryCounter">01 / 06</div>
+
+</div>
+</style>
+  
+</head>
+<script>
+const galleryImages = [
+"./IMG_6918.jpg",
+"./IMG_1903.jpeg",
+"./unnamed.jpg",
+"./wand-left-side.jpg",
+"./IMG_2620.jpg",
+"./IMG_2621.jpg"
+];
+
+let currentImage = 0;
+
+function changeImage(direction) {
+currentImage = (currentImage + direction + galleryImages.length) % galleryImages.length;
+
+const image = document.getElementById("galleryImage");
+const counter = document.getElementById("galleryCounter");
+
+image.style.opacity = 0;
+
+setTimeout(() => {
+image.src = galleryImages[currentImage];
+image.style.opacity = 1;
+counter.textContent =
+String(currentImage + 1).padStart(2, "0") + " / " +
+String(galleryImages.length).padStart(2, "0");
+}, 150);
+}
+</script>
 <body>
 
 <header>
@@ -210,43 +250,17 @@ margin-bottom: 90px;
 <section class="work">
 
 
-<img
-class="work-image"
-src="./IMG_6918.jpg"
-alt="My Wandering Head — Kimiya Rahpayma, another view"
->
+<div class="gallery">
 
-<div class="image-with-note">
+<button class="gallery-arrow prev" onclick="changeImage(-1)">&#8592;</button>
 
+<img class="gallery-image" src="./IMG_6918.jpg" id="galleryImage" alt="My Wandering Head">
 
+<button class="gallery-arrow next" onclick="changeImage(1)">&#8594;</button>
 
-<img
-class="work-image"
-src="./IMG_1903.jpeg"
-alt="My Wandering Head — Kimiya Rahpayma, another view"
->
+<div class="gallery-counter" id="galleryCounter">01 / 06</div>
 
 </div>
-  <img
-class="work-image"
-src="./unnamed.jpg"
-alt="My Wandering Head — Kimiya Rahpayma, another view"
->
-     <img
-class="work-image"
-src="./wand-left-side.jpg"
-alt="My Wandering Head, left side view"
->
-  <img
-class="work-image"
-src="./IMG_2620.jpg"
-alt="My Wandering Head, close-up of the left side"
->
-  <img
-class="work-image"
-src="./IMG_2621.jpg"
-alt="My Wandering Head, right side view"
->
 <div class="work-info">
 
 <div class="work-title" style="color: #8B1111;">
