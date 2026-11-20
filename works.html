@@ -1,286 +1,615 @@
+
+
+Skip to content
+Using Gmail with screen readers
+
+1 of 2,437
+(no subject)
+Inbox
+
+EYE KIM <kimiarahpayma@gmail.com>
+10:20 PM (1 minute ago)
+to me
+
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Works — Kimiya Rahpayma</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
+
 * {
-box-sizing: border-box;
+
+  box-sizing: border-box;
+
 }
+
+
 
 body {
-margin: 0;
-background: #0d0b0b;
-color: #eee8e2;
-font-family: Arial, Helvetica, sans-serif;
+
+  margin: 0;
+
+  background: #0d0b0b;
+
+  color: #eee8e2;
+
+  font-family: Arial, Helvetica, sans-serif;
+
 }
 
+
+
 header {
-padding: 28px 34px;
-display: flex;
-justify-content: space-between;
-align-items: center;
+
+  padding: 28px 34px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
 }
+
+
 
 .name {
-font-size: 14px;
-letter-spacing: 0.08em;
-font-weight: bold;
+
+  font-size: 14px;
+
+  letter-spacing: 0.08em;
+
+  font-weight: bold;
+
 }
 
+
+
 nav a {
-color: #eee8e2;
-text-decoration: none;
-font-size: 12px;
-letter-spacing: 0.12em;
-margin-left: 28px;
+
+  color: #eee8e2;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  letter-spacing: 0.12em;
+
+  margin-left: 28px;
+
 }
+
+
 
 nav a:hover {
-opacity: 0.5;
+
+  opacity: 0.5;
+
 }
+
+
 
 main {
-padding: 70px 34px 120px;
-max-width: 1200px;
-margin: auto;
+
+  padding: 70px 34px 120px;
+
+  max-width: 1200px;
+
+  margin: auto;
+
 }
+
+
 
 h1 {
+
   font-family: "Cormorant Garamond", serif;
-font-size: clamp(48px, 8vw, 100px);
-line-height: 0.85;
-margin: 0 0 120px;
-font-weight: 400;
-letter-spacing: -0.04em;
+
+  font-size: clamp(48px, 8vw, 100px);
+
+  line-height: 0.85;
+
+  margin: 0 0 120px;
+
+  font-weight: 400;
+
+  letter-spacing: -0.04em;
+
 }
+
+
 
 .work {
-margin-bottom: 190px;
+
+  margin-bottom: 190px;
+
 }
 
-.work-image {
-width: 78%;
-display: block;
-margin-left: auto;
-margin-right: auto;
+
+
+/* Gallery */
+
+
+
+.gallery {
+
+  width: 100%;
+
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  margin-top: 40px;
+
+  padding: 0 55px;
+
 }
 
-.work-image:first-child {
-width: 88%;
+
+
+.gallery-image {
+
+  width: 100%;
+
+  max-width: 780px;
+
+  height: 65vh;
+
+  object-fit: contain;
+
+  display: block;
+
+  margin: auto;
+
+  transition: opacity 0.3s ease;
+
 }
 
-.work-image:nth-child(2) {
-width: 65%;
-margin-right: 0;
+
+
+.gallery-arrow {
+
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  background: none;
+
+  border: none;
+
+  color: #eee8e2;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 32px;
+
+  font-weight: 300;
+
+  cursor: pointer;
+
+  opacity: 0.65;
+
+  transition: opacity 0.3s ease;
+
+  z-index: 2;
+
+  padding: 10px;
+
 }
 
-.work-image:nth-child(3) {
-width: 72%;
-margin-left: 0;
-}
-.work-image + .work-image {
-margin-top: 100px;
+
+
+.gallery-arrow:hover {
+
+  opacity: 1;
+
 }
 
-.image-with-note + .work-image {
-margin-top: 100px;
+
+
+.gallery-arrow.prev {
+
+  left: 0;
+
 }
+
+
+
+.gallery-arrow.next {
+
+  right: 0;
+
+}
+
+
+
+.gallery-counter {
+
+  position: absolute;
+
+  bottom: -35px;
+
+  width: 100%;
+
+  text-align: center;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 14px;
+
+  letter-spacing: 2px;
+
+  color: #c9bdb4;
+
+  opacity: 0.7;
+
+}
+
+
+
+/* Artwork information */
+
+
+
 .work-info {
-display: flex;
-justify-content: space-between;
-align-items: flex-start;
-margin-top: 18px;
-gap: 30px;
-}
-.work-note {
-width: 32%;
-font-family: "Cormorant Garamond", serif;
-font-size: 22px;
-line-height: 1.7;
-font-style: italic;
-font-weight: 400;
-color: #c9bdb4;
-opacity: 0.75;
-}
-  .image-with-note {
-display: flex;
-align-items: center;
-justify-content: space-between;
-gap: 50px;
-margin-top: 80px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  margin-top: 70px;
+
+  gap: 30px;
+
 }
 
-.image-with-note .work-image {
-width: 65%;
-margin: 0;
-}
 
-.image-with-note .work-note {
-width: 30%;
-}
+
 .work-title {
-font-family: "Cormorant Garamond", serif;
-font-size: 26px;
-font-weight: 400;
-font-style: italic;
-letter-spacing: 0.01em;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 26px;
+
+  font-weight: 400;
+
+  font-style: italic;
+
+  letter-spacing: 0.01em;
+
 }
+
+
 
 .work-details {
-font-size: 10px;
-line-height: 1.7;
-text-align: right;
-letter-spacing: 0.12em;
-text-transform: uppercase;
-opacity: 0.65;
+
+  font-size: 10px;
+
+  line-height: 1.7;
+
+  text-align: right;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+
+  opacity: 0.65;
+
 }
+
+
 
 footer {
-padding: 40px 34px;
-font-size: 11px;
-letter-spacing: 0.08em;
+
+  padding: 40px 34px;
+
+  font-size: 11px;
+
+  letter-spacing: 0.08em;
+
 }
 
-@media (max-width: 700px) {.image-with-note {
-gap: 20px;
+
+
+/* Mobile */
+
+
+
+@media (max-width: 700px) {
+
+
+
+  header {
+
+    padding: 22px 20px;
+
+  }
+
+
+
+  nav a {
+
+    margin-left: 15px;
+
+  }
+
+
+
+  main {
+
+    padding: 50px 20px 80px;
+
+  }
+
+
+
+  h1 {
+
+    margin-bottom: 60px;
+
+  }
+
+
+
+  .gallery {
+
+    padding: 0 35px;
+
+    margin-top: 20px;
+
+  }
+
+
+
+  .gallery-image {
+
+    width: 100%;
+
+    height: 48vh;
+
+    max-width: none;
+
+  }
+
+
+
+  .gallery-arrow {
+
+    font-size: 27px;
+
+    padding: 5px;
+
+  }
+
+
+
+  .gallery-arrow.prev {
+
+    left: 0;
+
+  }
+
+
+
+  .gallery-arrow.next {
+
+    right: 0;
+
+  }
+
+
+
+  .gallery-counter {
+
+    bottom: -30px;
+
+    font-size: 12px;
+
+  }
+
+
+
+  .work-info {
+
+    display: block;
+
+    margin-top: 60px;
+
+  }
+
+
+
+  .work-details {
+
+    text-align: left;
+
+    margin-top: 8px;
+
+  }
+
+
+
+  .work {
+
+    margin-bottom: 90px;
+
+  }
+
+
+
 }
 
-.image-with-note .work-image {
-width: 65%;
-}
-
-.image-with-note .work-note {
-width: 35%;
-font-size: 17px;
-}
-header {
-padding: 22px 20px;
-}
-
-nav a {
-margin-left: 15px;
-}
-
-main {
-padding: 50px 20px 80px;
-}
-
-h1 {
-margin-bottom: 60px;
-}
-
-.work-info {
-display: block;
-}
-
-.work-details {
-text-align: left;
-margin-top: 8px;
-}
-
-.work {
-margin-bottom: 90px;
-}
-}
-  <div class="gallery">
-
-<button class="gallery-arrow prev" onclick="changeImage(-1)">&#8592;</button>
-
-<img class="gallery-image" src="./IMG_6918.jpg" id="galleryImage" alt="My Wandering Head">
-
-<button class="gallery-arrow next" onclick="changeImage(1)">&#8594;</button>
-
-<div class="gallery-counter" id="galleryCounter">01 / 06</div>
-
-</div>
 </style>
-  
+
 </head>
-<script>
-const galleryImages = [
-"./IMG_6918.jpg",
-"./IMG_1903.jpeg",
-"./unnamed.jpg",
-"./wand-left-side.jpg",
-"./IMG_2620.jpg",
-"./IMG_2621.jpg"
-];
 
-let currentImage = 0;
-
-function changeImage(direction) {
-currentImage = (currentImage + direction + galleryImages.length) % galleryImages.length;
-
-const image = document.getElementById("galleryImage");
-const counter = document.getElementById("galleryCounter");
-
-image.style.opacity = 0;
-
-setTimeout(() => {
-image.src = galleryImages[currentImage];
-image.style.opacity = 1;
-counter.textContent =
-String(currentImage + 1).padStart(2, "0") + " / " +
-String(galleryImages.length).padStart(2, "0");
-}, 150);
-}
-</script>
 <body>
 
 <header>
-<div class="name">KIMIYA RAHPAYMA</div>
 
-<nav>
-<a href="index.html">HOME</a>
-<a href="works.html">WORKS</a>
-</nav>
+  <div class="name">KIMIYA RAHPAYMA</div>
+
+  <nav>
+
+    <a href="index.html">HOME</a>
+
+    <a href="Works.html">WORKS</a>
+
+  </nav>
+
 </header>
 
 <main>
 
-<h1>WORKS</h1>
+  <h1>WORKS</h1>
 
-<section class="work">
+  <section class="work">
+
 
 
 <div class="gallery">
 
-<button class="gallery-arrow prev" onclick="changeImage(-1)">&#8592;</button>
 
-<img class="gallery-image" src="./IMG_6918.jpg" id="galleryImage" alt="My Wandering Head">
 
-<button class="gallery-arrow next" onclick="changeImage(1)">&#8594;</button>
+  <button class="gallery-arrow prev" onclick="changeImage(-1)" aria-label="Previous image">&#8592;</button>
 
-<div class="gallery-counter" id="galleryCounter">01 / 06</div>
+
+
+  <img class="gallery-image" src="./IMG_6918.jpg" id="galleryImage" alt="My Wandering Head">
+
+
+
+  <button class="gallery-arrow next" onclick="changeImage(1)" aria-label="Next image">&#8594;</button>
+
+
+
+  <div class="gallery-counter" id="galleryCounter">01 / 06</div>
+
+
 
 </div>
+
+
+
 <div class="work-info">
 
-<div class="work-title" style="color: #8B1111;">
-My Wandering Head
-</div>
-<div class="work-details">
-2025<br>
-Sculpture
+
+
+  <div class="work-title" style="color: #8B1111;">
+
+    My Wandering Head
+
+  </div>
+
+
+
+  <div class="work-details">
+
+    2025<br>
+
+    Sculpture
+
+  </div>
+
+
 
 </div>
 
-</div>
-
-</section>
+  </section>
 
 </main>
 
 <footer>
-© Kimiya Rahpayma
+
+  © Kimiya Rahpayma
+
 </footer>
 
+<script>
+
+const galleryImages = [
+
+  "./IMG_6918.jpg",
+
+  "./IMG_1903.jpeg",
+
+  "./unnamed.jpg",
+
+  "./wand-left-side.jpg",
+
+  "./IMG_2620.jpg",
+
+  "./IMG_2621.jpg"
+
+];
+
+
+
+let currentImage = 0;
+
+
+
+function changeImage(direction) {
+
+  currentImage = (currentImage + direction + galleryImages.length) % galleryImages.length;
+
+
+
+  const image = document.getElementById("galleryImage");
+
+  const counter = document.getElementById("galleryCounter");
+
+
+
+  image.style.opacity = 0;
+
+
+
+  setTimeout(() => {
+
+    image.src = galleryImages[currentImage];
+
+    image.style.opacity = 1;
+
+
+
+    counter.textContent =
+
+      String(currentImage + 1).padStart(2, "0") + " / " +
+
+      String(galleryImages.length).padStart(2, "0");
+
+  }, 150);
+
+}
+
+</script>
+
 </body>
+
 </html>
+
+:::
+
