@@ -469,7 +469,47 @@ height: 42px;
 
 
 }
+/* After Dark */
+.after-dark {
+margin-top: 160px;
+}
 
+.after-dark-title {
+font-family: "Cormorant Garamond", serif;
+font-size: 24px;
+font-style: italic;
+color: #c9bdb4;
+margin-bottom: 45px;
+opacity: 0.8;
+}
+
+.after-dark-gallery {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 35px 25px;
+}
+
+.after-dark-gallery img {
+width: 100%;
+height: auto;
+display: block;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+.after-dark {
+margin-top: 110px;
+}
+
+.after-dark-title {
+font-size: 22px;
+margin-bottom: 28px;
+}
+
+.after-dark-gallery {
+gap: 18px 12px;
+}
+}
 </style>
 
 </head>
@@ -545,7 +585,18 @@ height: 42px;
 
 
 </div>
+<div class="after-dark">
+<div class="after-dark-title">After Dark</div>
 
+<div class="after-dark-gallery">
+<img src="./IMG_2624.jpeg" alt="My Wandering Head — illuminated">
+<img src="./IMG_2625.jpeg" alt="My Wandering Head — illuminated">
+<img src="./IMG_2626.jpeg" alt="My Wandering Head — illuminated">
+<img src="./IMG_2627.jpeg" alt="My Wandering Head — illuminated">
+<img src="./IMG_2628.jpeg" alt="My Wandering Head — illuminated">
+<img src="./IMG_2629.jpeg" alt="My Wandering Head — illuminated">
+</div>
+</div>
   </section>
 
 </main>
