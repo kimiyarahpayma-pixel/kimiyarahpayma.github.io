@@ -153,21 +153,13 @@ h1 {
 
 
 .gallery-image {
-
-  width: 100%;
-
-  max-width: 780px;
-
-  height: 65vh;
-
-  object-fit: contain;
-
-  display: block;
-
-  margin: auto;
-
-  transition: opacity 0.3s ease;
-
+width: 100%;
+max-width: 900px;
+height: 72vh;
+object-fit: contain;
+display: block;
+margin: auto;
+transition: opacity 0.3s ease;
 }
 
 
@@ -252,7 +244,33 @@ h1 {
 
 }
 
+.gallery-thumbnails {
+position: absolute;
+bottom: -100px;
+display: flex;
+justify-content: center;
+gap: 12px;
+width: 100%;
+}
 
+.gallery-thumb {
+width: 55px;
+height: 55px;
+object-fit: cover;
+cursor: pointer;
+opacity: 0.45;
+transition: opacity 0.3s ease, border 0.3s ease;
+border: 1px solid transparent;
+}
+
+.gallery-thumb:hover {
+opacity: 0.85;
+}
+
+.gallery-thumb.active {
+opacity: 1;
+border: 1px solid #c9bdb4;
+}
 
 /* Artwork information */
 
@@ -361,12 +379,10 @@ footer {
 
 
   .gallery {
-
-    padding: 0 35px;
-
-    margin-top: 20px;
-
-  }
+padding: 0 35px;
+margin-top: 20px;
+margin-bottom: 120px;
+}
 
 
 
@@ -409,13 +425,19 @@ footer {
 
 
   .gallery-counter {
+bottom: -35px;
+font-size: 12px;
+}
 
-    bottom: -30px;
+.gallery-thumbnails {
+bottom: -100px;
+gap: 8px;
+}
 
-    font-size: 12px;
-
-  }
-
+.gallery-thumb {
+width: 42px;
+height: 42px;
+}
 
 
   .work-info {
@@ -493,7 +515,7 @@ footer {
 
 
   <div class="gallery-counter" id="galleryCounter">01 / 06</div>
-
+<div class="gallery-thumbnails" id="galleryThumbnails"></div>
 
 
 </div>
@@ -535,63 +557,63 @@ footer {
 </footer>
 
 <script>
-
 const galleryImages = [
-
-  "./IMG_6918.jpg",
-
-  "./IMG_1903.jpeg",
-
-  "./unnamed.jpg",
-
-  "./wand-left-side.jpg",
-
-  "./IMG_2620.jpg",
-
-  "./IMG_2621.jpg"
-
+"./IMG_6918.jpg",
+"./IMG_1903.jpeg",
+"./unnamed.jpg",
+"./wand-left-side.jpg",
+"./IMG_2620.jpg",
+"./IMG_2621.jpg"
 ];
-
-
 
 let currentImage = 0;
 
+const mainImage = document.getElementById("galleryImage");
+const counter = document.getElementById("galleryCounter");
+const thumbnailContainer = document.getElementById("galleryThumbnails");
 
+function showImage(index) {
+currentImage = (index + galleryImages.length) % galleryImages.length;
 
-function changeImage(direction) {
+mainImage.style.opacity = 0;
 
-  currentImage = (currentImage + direction + galleryImages.length) % galleryImages.length;
+setTimeout(() => {
+mainImage.src = galleryImages[currentImage];
+mainImage.style.opacity = 1;
 
+counter.textContent =
+String(currentImage + 1).padStart(2, "0") + " / " +
+String(galleryImages.length).padStart(2, "0");
 
-
-  const image = document.getElementById("galleryImage");
-
-  const counter = document.getElementById("galleryCounter");
-
-
-
-  image.style.opacity = 0;
-
-
-
-  setTimeout(() => {
-
-    image.src = galleryImages[currentImage];
-
-    image.style.opacity = 1;
-
-
-
-    counter.textContent =
-
-      String(currentImage + 1).padStart(2, "0") + " / " +
-
-      String(galleryImages.length).padStart(2, "0");
-
-  }, 150);
-
+updateThumbnails();
+}, 150);
 }
 
+function changeImage(direction) {
+showImage(currentImage + direction);
+}
+
+function updateThumbnails() {
+thumbnailContainer.innerHTML = "";
+
+galleryImages.forEach((src, index) => {
+const thumb = document.createElement("img");
+
+thumb.src = src;
+thumb.className = "gallery-thumb";
+thumb.alt = "View " + (index + 1);
+
+if (index === currentImage) {
+thumb.classList.add("active");
+}
+
+thumb.onclick = () => showImage(index);
+
+thumbnailContainer.appendChild(thumb);
+});
+}
+
+updateThumbnails();
 </script>
 
 </body>
