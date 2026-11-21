@@ -1,7 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Biological Hallucinations — Kimiya Rahpayma</title>
@@ -11,440 +15,919 @@
 <style>
 
 * {
-box-sizing: border-box;
+
+    box-sizing: border-box;
+
 }
+
+
 
 :root {
---acid: #d8ff00;
---pink: #ff38d1;
---violet: #8a38ff;
---black: #101010;
---white: #fffdf5;
+
+    --acid: #d8ff00;
+
+    --pink: #ff38d1;
+
+    --violet: #8a38ff;
+
+    --black: #101010;
+
+    --white: #fffdf5;
+
 }
+
+
 
 body {
-margin: 0;
-background: var(--acid);
-color: var(--black);
-font-family: 'Space Mono', monospace;
-overflow-x: hidden;
+
+    margin: 0;
+
+    background: var(--acid);
+
+    color: var(--black);
+
+    font-family: 'Space Mono', monospace;
+
+    overflow-x: hidden;
+
 }
+
+
 
 header {
-padding: 24px 30px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-border-bottom: 1px solid var(--black);
+
+    padding: 24px 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom: 1px solid var(--black);
+
 }
+
+
 
 .name {
-font-family: Arial, sans-serif;
-font-size: 12px;
-font-weight: bold;
-letter-spacing: .08em;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: .08em;
+
 }
+
+
 
 nav a {
-color: var(--black);
-text-decoration: none;
-font-size: 11px;
-margin-left: 25px;
-letter-spacing: .12em;
+
+    color: var(--black);
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    margin-left: 25px;
+
+    letter-spacing: .12em;
+
 }
+
+
 
 nav a:hover {
-text-decoration: underline;
+
+    text-decoration: underline;
+
 }
 
+
+
 main {
-padding: 55px 30px 100px;
-max-width: 1500px;
-margin: auto;
+
+    padding: 55px 30px 100px;
+
+    max-width: 1500px;
+
+    margin: auto;
+
 }
+
+
 
 /* INTRO */
 
+
+
 .intro {
-position: relative;
-margin-bottom: 110px;
+
+    position: relative;
+
+    margin-bottom: 110px;
+
 }
+
+
 
 h1 {
-font-family: 'Syne', sans-serif;
-font-size: clamp(60px, 13vw, 190px);
-font-weight: 800;
-letter-spacing: -.09em;
-line-height: .78;
-margin: 0;
-max-width: 1200px;
-text-transform: uppercase;
+
+    font-family: 'Syne', sans-serif;
+
+    font-size: clamp(60px, 13vw, 190px);
+
+    font-weight: 800;
+
+    letter-spacing: -.09em;
+
+    line-height: .78;
+
+    margin: 0;
+
+    max-width: 1200px;
+
+    text-transform: uppercase;
+
 }
+
+
 
 .intro-bottom {
-display: flex;
-justify-content: space-between;
-align-items: flex-end;
-margin-top: 50px;
-gap: 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    margin-top: 50px;
+
+    gap: 30px;
+
 }
+
+
 
 .intro-text {
-font-size: 12px;
-line-height: 1.8;
-max-width: 350px;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    max-width: 350px;
+
 }
 
+
+
 .intro-code {
-font-size: 10px;
-text-align: right;
-line-height: 1.8;
+
+    font-size: 10px;
+
+    text-align: right;
+
+    line-height: 1.8;
+
 }
+
+
 
 /* Decorative symbol */
 
+
+
 .bio-symbol {
-position: absolute;
-top: 10px;
-right: 5%;
-font-size: clamp(40px, 8vw, 110px);
-animation: spin 18s linear infinite;
-pointer-events: none;
+
+    position: absolute;
+
+    top: 10px;
+
+    right: 5%;
+
+    font-size: clamp(40px, 8vw, 110px);
+
+    animation: spin 18s linear infinite;
+
+    pointer-events: none;
+
 }
 
+
+
 @keyframes spin {
-to { transform: rotate(360deg); }
+
+    to { transform: rotate(360deg); }
+
 }
+
+
 
 /* Specimen */
 
+
+
 .specimen {
-border-top: 2px solid var(--black);
-padding-top: 20px;
+
+    border-top: 2px solid var(--black);
+
+    padding-top: 20px;
+
 }
+
+
 
 .specimen-heading {
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin-bottom: 35px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 35px;
+
 }
+
+
 
 .specimen-number {
-font-family: 'Syne', sans-serif;
-font-weight: 800;
-font-size: clamp(35px, 7vw, 85px);
-letter-spacing: -.07em;
+
+    font-family: 'Syne', sans-serif;
+
+    font-weight: 800;
+
+    font-size: clamp(35px, 7vw, 85px);
+
+    letter-spacing: -.07em;
+
 }
 
+
+
 .specimen-status {
-font-size: 10px;
-text-align: right;
-line-height: 1.8;
+
+    font-size: 10px;
+
+    text-align: right;
+
+    line-height: 1.8;
+
 }
+
+
 
 /* Images */
 
+
+
 .specimen-gallery {
-display: grid;
-grid-template-columns: 1.3fr .7fr;
-gap: 15px;
+
+    display: grid;
+
+    grid-template-columns: 1.3fr .7fr;
+
+    gap: 15px;
+
 }
+
+
 
 .specimen-main {
-position: relative;
-overflow: hidden;
-background: var(--pink);
-cursor: zoom-in;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: var(--pink);
+
+    cursor: zoom-in;
+
 }
+
+
 
 .specimen-main img {
-width: 100%;
-height: 680px;
-object-fit: cover;
-display: block;
-transition: transform .6s ease;
+
+    width: 100%;
+
+    height: 680px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform .6s ease;
+
 }
+
+
 
 .specimen-main:hover img {
-transform: scale(1.025);
+
+    transform: scale(1.025);
+
 }
+
+
 
 .specimen-side {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 12px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
 }
+
+
 
 .specimen-side img {
-width: 100%;
-height: 330px;
-object-fit: cover;
-display: block;
-background: var(--pink);
-cursor: zoom-in;
-transition: transform .3s ease;
+
+    width: 100%;
+
+    height: 330px;
+
+    object-fit: cover;
+
+    display: block;
+
+    background: var(--pink);
+
+    cursor: zoom-in;
+
+    transition: transform .3s ease;
+
 }
 
+
+
 .specimen-side img:hover {
-transform: scale(1.02);
+
+    transform: scale(1.02);
+
 }
+
+
 
 /* Remaining image strip */
 
+
+
 .specimen-strip {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 15px;
-margin-top: 15px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 15px;
+
 }
+
+
 
 .specimen-strip img {
-width: 100%;
-height: 400px;
-object-fit: cover;
-display: block;
-cursor: zoom-in;
-background: var(--pink);
-transition: filter .3s ease;
+
+    width: 100%;
+
+    height: 400px;
+
+    object-fit: cover;
+
+    display: block;
+
+    cursor: zoom-in;
+
+    background: var(--pink);
+
+    transition: filter .3s ease;
+
 }
 
+
+
 .specimen-strip img:hover {
-filter: saturate(1.5);
+
+    filter: saturate(1.5);
+
 }
+
+
 
 /* Information */
 
+
+
 .specimen-info {
-display: flex;
-justify-content: space-between;
-margin-top: 45px;
-gap: 30px;
-align-items: flex-start;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 45px;
+
+    gap: 30px;
+
+    align-items: flex-start;
+
 }
+
+
 
 .specimen-name {
-font-family: 'Syne', sans-serif;
-font-size: 35px;
-font-weight: 700;
-letter-spacing: -.05em;
+
+    font-family: 'Syne', sans-serif;
+
+    font-size: 35px;
+
+    font-weight: 700;
+
+    letter-spacing: -.05em;
+
 }
+
+
 
 .specimen-description {
-font-size: 11px;
-line-height: 1.9;
-max-width: 420px;
+
+    font-size: 11px;
+
+    line-height: 1.9;
+
+    max-width: 420px;
+
 }
 
+
+
 .specimen-description span {
-background: var(--pink);
-padding: 2px 5px;
+
+    background: var(--pink);
+
+    padding: 2px 5px;
+
 }
+
+
 
 /* Viewer */
 
+
+
 .viewer {
-display: none;
-position: fixed;
-inset: 0;
-z-index: 100;
-background: rgba(16,16,16,.96);
-justify-content: center;
-align-items: center;
-padding: 30px;
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    background: rgba(16,16,16,.96);
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+
 }
+
+
 
 .viewer.active {
-display: flex;
+
+    display: flex;
+
 }
+
+
 
 .viewer img {
-max-width: 92%;
-max-height: 88vh;
-object-fit: contain;
+
+    max-width: 92%;
+
+    max-height: 88vh;
+
+    object-fit: contain;
+
 }
 
+
+
 .viewer-close {
-position: absolute;
-top: 25px;
-right: 30px;
-color: var(--acid);
-font-size: 30px;
-background: none;
-border: none;
-cursor: pointer;
-font-family: 'Space Mono', monospace;
+
+    position: absolute;
+
+    top: 25px;
+
+    right: 30px;
+
+    color: var(--acid);
+
+    font-size: 30px;
+
+    background: none;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-family: 'Space Mono', monospace;
+
 }
+
+
 
 /* Footer */
 
+
+
 footer {
-border-top: 1px solid var(--black);
-padding: 30px;
-font-size: 10px;
-display: flex;
-justify-content: space-between;
+
+    border-top: 1px solid var(--black);
+
+    padding: 30px;
+
+    font-size: 10px;
+
+    display: flex;
+
+    justify-content: space-between;
+
 }
+
+
 
 /* Mobile */
 
+
+
 @media (max-width: 700px) {
 
-header {
-padding: 20px;
-}
 
-nav a {
-margin-left: 12px;
-font-size: 9px;
-}
 
-main {
-padding: 45px 20px 80px;
-}
+    header {
 
-h1 {
-font-size: 18vw;
-line-height: .78;
-}
+        padding: 20px;
 
-.bio-symbol {
-top: auto;
-bottom: -30px;
-right: 0;
-font-size: 55px;
-}
+    }
 
-.intro-bottom {
-margin-top: 35px;
-display: block;
-}
 
-.intro-code {
-text-align: left;
-margin-top: 25px;
-}
 
-.specimen-heading {
-align-items: flex-start;
-}
+    nav a {
 
-.specimen-number {
-font-size: 13vw;
-}
+        margin-left: 12px;
 
-.specimen-gallery {
-grid-template-columns: 1fr;
-}
+        font-size: 9px;
 
-.specimen-main img {
-height: 480px;
-}
+    }
 
-.specimen-side img {
-height: 210px;
-}
 
-.specimen-strip {
-grid-template-columns: 1fr 1fr;
-gap: 10px;
-}
 
-.specimen-strip img {
-height: 240px;
-}
+    main {
 
-.specimen-info {
-display: block;
-}
+        padding: 45px 20px 80px;
 
-.specimen-name {
-font-size: 29px;
-margin-bottom: 20px;
-}
+    }
 
-footer {
-padding: 25px 20px;
-}
+
+
+    h1 {
+
+        font-size: 18vw;
+
+        line-height: .78;
+
+    }
+
+
+
+    .bio-symbol {
+
+        top: auto;
+
+        bottom: -30px;
+
+        right: 0;
+
+        font-size: 55px;
+
+    }
+
+
+
+    .intro-bottom {
+
+        margin-top: 35px;
+
+        display: block;
+
+    }
+
+
+
+    .intro-code {
+
+        text-align: left;
+
+        margin-top: 25px;
+
+    }
+
+
+
+    .specimen-heading {
+
+        align-items: flex-start;
+
+    }
+
+
+
+    .specimen-number {
+
+        font-size: 13vw;
+
+    }
+
+
+
+    .specimen-gallery {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+
+    .specimen-main img {
+
+        height: 480px;
+
+    }
+
+
+
+    .specimen-side img {
+
+        height: 210px;
+
+    }
+
+
+
+    .specimen-strip {
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+
+    }
+
+
+
+    .specimen-strip img {
+
+        height: 240px;
+
+    }
+
+
+
+    .specimen-info {
+
+        display: block;
+
+    }
+
+
+
+    .specimen-name {
+
+        font-size: 29px;
+
+        margin-bottom: 20px;
+
+    }
+
+
+
+    footer {
+
+        padding: 25px 20px;
+
+    }
+
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
-<div class="name">KIMIYA RAHPAYMA</div>
-<nav>
-<a href="index.html">HOME</a>
-<a href="Works.html">WORKS</a>
-</nav>
+
+    <div class="name">KIMIYA RAHPAYMA</div>
+
+    <nav>
+
+        <a href="../index.html">HOME</a>
+
+        <a href="../Works.html">WORKS</a>
+
+    </nav>
+
 </header>
 
 <main>
 
 <section class="intro">
 
+
+
 <div class="bio-symbol">✳</div>
+
+
 
 <h1>BIOLOGICAL<br>HALLUCINATIONS</h1>
 
-<div class="intro-bottom">
-<div class="intro-text">
-A collection of curious little organisms
-born somewhere between biological fascination
-and the imaginary.
-</div>
 
-<div class="intro-code">
-UNSTABLE CLASSIFICATION<br>
-UNKNOWN ORIGIN<br>
-ARCHIVE 001—∞
-</div>
+
+<div class="intro-bottom">
+
+    <div class="intro-text">
+
+        A collection of curious little organisms
+
+        born somewhere between biological fascination
+
+        and the imaginary.
+
+    </div>
+
+
+
+    <div class="intro-code">
+
+        UNSTABLE CLASSIFICATION<br>
+
+        UNKNOWN ORIGIN<br>
+
+        ARCHIVE 001—∞
+
+    </div>
+
 </div>
 
 </section>
 
 <section class="specimen">
 
+
+
 <div class="specimen-heading">
-<div class="specimen-number">SPECIMEN 001</div>
-<div class="specimen-status">
-STATUS: EXISTS<br>
-ORIGIN: UNKNOWN
-</div>
+
+    <div class="specimen-number">SPECIMEN 001</div>
+
+    <div class="specimen-status">
+
+        STATUS: EXISTS<br>
+
+        ORIGIN: UNKNOWN
+
+    </div>
+
 </div>
 
-<div class="specimen-main">
-<img src="./biological-hallucinations/IMG_2653.jpg" alt="Biological Hallucination specimen 001" onclick="openViewer(this)">
+
+
+<div class="specimen-gallery">
+
+
+
+    <div class="specimen-main">
+
+        <img src="./biological-hallucinations/IMG_2653.jpg"
+
+             alt="Biological Hallucination specimen 001"
+
+             onclick="openViewer(this)">
+
+    </div>
+
+
+
+    <div class="specimen-side">
+
+        <img src="./biological-hallucinations/IMG_2654.jpg"
+
+             alt="Specimen 001 — observation 02"
+
+             onclick="openViewer(this)">
+
+
+
+        <img src="./biological-hallucinations/IMG_2655.jpg"
+
+             alt="Specimen 001 — observation 03"
+
+             onclick="openViewer(this)">
+
+
+
+        <img src="./biological-hallucinations/IMG_2656.jpg"
+
+             alt="Specimen 001 — observation 04"
+
+             onclick="openViewer(this)">
+
+
+
+        <img src="./biological-hallucinations/IMG_2657.jpg"
+
+             alt="Specimen 001 — observation 05"
+
+             onclick="openViewer(this)">
+
+    </div>
+
+
+
 </div>
 
-<div class="specimen-side">
-<img src="./biological-hallucinations/IMG_2654.jpg" alt="Specimen 001 — observation 02" onclick="openViewer(this)">
-<img src="./biological-hallucinations/IMG_2655.jpg" alt="Specimen 001 — observation 03" onclick="openViewer(this)">
-<img src="./biological-hallucinations/IMG_2656.jpg" alt="Specimen 001 — observation 04" onclick="openViewer(this)">
-<img src="./biological-hallucinations/IMG_2657.jpg" alt="Specimen 001 — observation 05" onclick="openViewer(this)">
-</div>
+
 
 <div class="specimen-strip">
-<img src="./biological-hallucinations/IMG_2658.jpg" alt="Specimen 001 — observation 06" onclick="openViewer(this)">
-<img src="./biological-hallucinations/IMG_2659.jpg" alt="Specimen 001 — observation 07" onclick="openViewer(this)">
-<div style="background:var(--pink);display:flex;align-items:center;justify-content:center;min-height:240px;font-family:Syne,sans-serif;font-size:clamp(25px,5vw,60px);font-weight:800;letter-spacing:-.06em;">
-<span style="transform:rotate(-8deg)">STILL<br>ALIVE?</span>
+
+
+
+    <img src="./biological-hallucinations/IMG_2658.jpg"
+
+         alt="Specimen 001 — observation 06"
+
+         onclick="openViewer(this)">
+
+
+
+    <img src="./biological-hallucinations/IMG_2659.jpg"
+
+         alt="Specimen 001 — observation 07"
+
+         onclick="openViewer(this)">
+
+
+
+    <div style="background:var(--pink);display:flex;align-items:center;justify-content:center;min-height:240px;font-family:Syne,sans-serif;font-size:clamp(25px,5vw,60px);font-weight:800;letter-spacing:-.06em;">
+
+        <span style="transform:rotate(-8deg)">STILL<br>ALIVE?</span>
+
+    </div>
+
+
+
 </div>
-</div>
+
+
 
 <div class="specimen-info">
-<div class="specimen-name">An unidentified<br>little creature.</div>
 
-<div class="specimen-description">
-<span>SPECIES: UNDETERMINED</span><br>
-CLASSIFICATION: BIOLOGICAL HALLUCINATION<br>
-STATUS: EXISTS<br><br>
-Seven recorded observations of a small
-organism whose existence remains
-suspiciously unquestionable.
-</div>
+
+
+    <div class="specimen-name">
+
+        An unidentified<br>little creature.
+
+    </div>
+
+
+
+    <div class="specimen-description">
+
+        <span>SPECIES: UNDETERMINED</span><br>
+
+        CLASSIFICATION: BIOLOGICAL HALLUCINATION<br>
+
+        STATUS: EXISTS<br><br>
+
+        Seven recorded observations of a small
+
+        organism whose existence remains
+
+        suspiciously unquestionable.
+
+    </div>
+
+
+
 </div>
 
 </section>
@@ -452,34 +935,64 @@ suspiciously unquestionable.
 </main>
 
 <footer>
-<div>© KIMIYA RAHPAYMA</div>
-<div>BIOLOGICAL HALLUCINATIONS</div>
+
+    <div>© KIMIYA RAHPAYMA</div>
+
+    <div>BIOLOGICAL HALLUCINATIONS</div>
+
 </footer>
 
+
+
 <div class="viewer" id="viewer" onclick="closeViewer()">
-<button class="viewer-close" aria-label="Close">&times;</button>
-<img id="viewerImage" src="" alt="Enlarged specimen">
+
+    <button class="viewer-close" aria-label="Close">&times;</button>
+
+    <img id="viewerImage" src="" alt="Enlarged specimen">
+
 </div>
+
+
 
 <script>
 
 function openViewer(img) {
-const viewer = document.getElementById("viewer");
-const viewerImage = document.getElementById("viewerImage");
 
-viewerImage.src = img.src;
-viewer.classList.add("active");
+    const viewer = document.getElementById("viewer");
+
+    const viewerImage = document.getElementById("viewerImage");
+
+
+
+    viewerImage.src = img.src;
+
+    viewer.classList.add("active");
+
 }
+
+
 
 function closeViewer() {
-document.getElementById("viewer").classList.remove("active");
+
+    document.getElementById("viewer").classList.remove("active");
+
 }
 
+
+
 document.addEventListener("keydown", function(event) {
-if (event.key === "Escape") closeViewer();
+
+    if (event.key === "Escape") closeViewer();
+
 });
 
 </script>
 
+
+
 </body>
+
 </html>
+
+:::
+
