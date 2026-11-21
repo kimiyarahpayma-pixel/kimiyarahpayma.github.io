@@ -1,119 +1,502 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Kimiya Rahpayma — Artist</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
+
 * {
 box-sizing: border-box;
 }
 
-body {
-margin: 0;
-background: #0d0b0b;
-color: #eee8e2;
-font-family: Arial, sans-serif;
+:root {
+--acid: #d8ff00;
+--pink: #ff38d1;
+--violet: #8a38ff;
+--black: #101010;
+--cream: #f4f1ec;
 }
 
+html {
+scroll-behavior: smooth;
+}
+
+body {
+margin: 0;
+background: var(--acid);
+color: var(--black);
+font-family: 'Space Mono', monospace;
+overflow-x: hidden;
+}
+
+/* NAVIGATION */
+
 header {
-padding: 28px 35px;
+padding: 24px 35px;
 display: flex;
 justify-content: space-between;
 align-items: center;
+gap: 30px;
+border-bottom: 1px solid var(--black);
+background: var(--acid);
 }
 
 .logo {
-font-size: 14px;
-letter-spacing: 0.12em;
-color: #8B1111;
+font-family: 'Syne', sans-serif;
+font-size: 12px;
+font-weight: 800;
+letter-spacing: .08em;
+white-space: nowrap;
+}
+
+nav {
+display: flex;
+flex-wrap: wrap;
+justify-content: flex-end;
+gap: 22px;
 }
 
 nav a {
-color: inherit;
+color: var(--black);
 text-decoration: none;
 font-size: 10px;
-letter-spacing: 0.16em;
-margin-left: 26px;
-opacity: 0.65;
-transition: opacity 0.3s ease;
+letter-spacing: .1em;
+transition: opacity .3s ease;
 }
 
 nav a:hover {
-opacity: 1;
+opacity: .45;
 }
 
+/* HERO */
+
 .hero {
-padding: 90px 35px 120px;
+min-height: 85vh;
+padding: 75px 35px 40px;
+position: relative;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+overflow: hidden;
+}
+
+.hero-title {
+position: relative;
+z-index: 1;
 }
 
 .hero h1 {
+font-family: 'Syne', sans-serif;
+font-size: clamp(90px, 16.5vw, 240px);
+font-weight: 800;
+letter-spacing: -.105em;
+line-height: .76;
+text-transform: uppercase;
 margin: 0;
-font-size: clamp(48px, 8vw, 110px);
-line-height: 0.88;
-font-weight: 400;
-letter-spacing: -0.055em;
-text-transform: none;
-font-family: "Cormorant Garamond", serif;
+}
+
+.hero h1 span {
+display: block;
+}
+
+.hero h1 span:last-child {
+margin-left: 8vw;
+}
+
+/* ROTATING SYMBOL */
+
+.bio-symbol {
+position: absolute;
+top: 14%;
+right: 8%;
+font-size: clamp(70px, 12vw, 160px);
+animation: spin 22s linear infinite;
+pointer-events: none;
+}
+
+@keyframes spin {
+to {
+transform: rotate(360deg);
+}
+}
+
+/* HERO BOTTOM */
+
+.hero-bottom {
+display: flex;
+justify-content: space-between;
+align-items: flex-end;
+gap: 40px;
+margin-top: 90px;
 }
 
 .intro {
-max-width: 470px;
-margin-top: 100px;
-font-size: 17px;
-line-height: 1.5;
+max-width: 460px;
+font-family: 'Cormorant Garamond', serif;
+font-size: 25px;
+line-height: 1.35;
 }
+
+.intro-meta {
+font-size: 10px;
+line-height: 2;
+text-align: right;
+letter-spacing: .04em;
+}
+
+/* PINK INTERRUPTION */
+
+.interruption {
+background: var(--pink);
+padding: 27px 35px;
+overflow: hidden;
+}
+
+.interruption p {
+font-family: 'Syne', sans-serif;
+font-size: clamp(22px, 4.5vw, 65px);
+font-weight: 800;
+letter-spacing: -.055em;
+line-height: 1;
+margin: 0;
+text-transform: uppercase;
+}
+
+/* ARTWORK SECTIONS */
 
 .work {
-padding: 0 35px 150px;
+padding: 100px 35px 130px;
 }
 
-.work img {
-display: block;
+.wandering {
+background: var(--cream);
+}
+
+.work-label {
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 10px;
+letter-spacing: .12em;
+margin-bottom: 35px;
+}
+
+.work-number {
+opacity: .55;
+}
+
+/* WANDERING HEAD */
+
+.wandering-image {
 width: 78%;
-max-width: 720px;
-height: auto;
+max-width: 1100px;
 margin-left: auto;
-margin-right: auto;
+display: block;
+}
+
+.wandering-image img {
+width: 100%;
+height: auto;
+display: block;
 }
 
 .work-info {
-margin-top: 18px;
+width: 78%;
+max-width: 1100px;
+margin: 25px 0 0 auto;
 display: flex;
 justify-content: space-between;
-width: 78%;
-max-width: 720px;
-margin-left: auto;
-margin-right: auto;
-font-size: 11px;
-letter-spacing: 0.06em;
+align-items: flex-start;
+gap: 25px;
 }
 
 .work-title {
-font-size: 16px;
-margin-bottom: 6px;
+font-family: 'Syne', sans-serif;
+font-size: clamp(26px, 4vw, 55px);
+font-weight: 700;
+letter-spacing: -.06em;
+line-height: 1;
 }
 
 .work-year {
+font-size: 10px;
+letter-spacing: .1em;
+margin-top: 12px;
+opacity: .55;
+}
+
+.work-medium {
+font-size: 10px;
+letter-spacing: .1em;
+text-align: right;
+line-height: 1.8;
+}
+
+/* BIOLOGICAL HALLUCINATIONS */
+
+.biological {
+background: var(--acid);
+position: relative;
+}
+
+.biological-link {
+color: var(--black);
+text-decoration: none;
+display: block;
+}
+
+.bio-layout {
+display: grid;
+grid-template-columns: .8fr 1.2fr;
+gap: 50px;
+align-items: center;
+}
+
+.bio-text {
+position: relative;
+}
+
+.bio-heading {
+font-family: 'Syne', sans-serif;
+font-weight: 800;
+font-size: clamp(45px, 7vw, 100px);
+letter-spacing: -.085em;
+line-height: .84;
+text-transform: uppercase;
+margin: 0;
+}
+
+.bio-description {
 font-size: 11px;
-opacity: 0.55;
+line-height: 1.9;
+max-width: 300px;
+margin-top: 35px;
+}
+
+.bio-arrow {
+font-size: 45px;
+display: inline-block;
+margin-top: 30px;
+transition: transform .3s ease;
+}
+
+.biological-link:hover .bio-arrow {
+transform: translate(12px, -8px);
+}
+
+.bio-image {
+position: relative;
+background: var(--pink);
+overflow: hidden;
+}
+
+.bio-image img {
+width: 100%;
+height: auto;
+display: block;
+transition: transform .6s ease;
+}
+
+.biological-link:hover .bio-image img {
+transform: scale(1.025);
+}
+
+.bio-sticker {
+position: absolute;
+bottom: 20px;
+left: 20px;
+background: var(--pink);
+padding: 12px 15px;
+font-size: 10px;
+letter-spacing: .1em;
+transform: rotate(-4deg);
+}
+
+/* FOOTER */
+
+footer {
+background: var(--black);
+color: var(--cream);
+padding: 45px 35px 30px;
+}
+
+.footer-top {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+gap: 30px;
+}
+
+.footer-statement {
+font-family: 'Syne', sans-serif;
+font-size: clamp(45px, 8vw, 115px);
+font-weight: 800;
+letter-spacing: -.08em;
+line-height: .85;
+}
+
+.footer-symbol {
+color: var(--pink);
+font-size: 60px;
+}
+
+.footer-bottom {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 100px;
+padding-top: 20px;
+border-top: 1px solid rgba(244,241,236,.3);
+font-size: 10px;
+letter-spacing: .08em;
+}
+
+.footer-bottom a {
+color: var(--cream);
+text-decoration: none;
+}
+
+.footer-bottom a:hover {
+color: var(--pink);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+header {
+padding: 20px;
+flex-direction: column;
+align-items: flex-start;
+gap: 20px;
+}
+
+nav {
+justify-content: flex-start;
+gap: 14px;
+}
+
+nav a {
+font-size: 9px;
+}
+
+.hero {
+min-height: 75vh;
+padding: 65px 20px 30px;
+}
+
+.hero h1 {
+font-size: 18vw;
+}
+
+.hero h1 span:last-child {
+margin-left: 3vw;
+}
+
+.bio-symbol {
+top: 25%;
+right: 5%;
+font-size: 65px;
+}
+
+.hero-bottom {
+display: block;
+margin-top: 100px;
+}
+
+.intro {
+font-size: 22px;
+max-width: 90%;
+}
+
+.intro-meta {
+text-align: left;
+margin-top: 30px;
+}
+
+.interruption {
+padding: 25px 20px;
+}
+
+.work {
+padding: 70px 20px 90px;
+}
+
+.work-label {
+margin-bottom: 25px;
+}
+
+.wandering-image {
+width: 100%;
+}
+
+.work-info {
+width: 100%;
+margin-top: 18px;
+}
+
+.work-title {
+font-size: 30px;
+}
+
+.bio-layout {
+grid-template-columns: 1fr;
+gap: 35px;
+}
+
+.bio-heading {
+font-size: 19vw;
+}
+
+.bio-description {
+margin-top: 25px;
+}
+
+.bio-arrow {
+margin-top: 15px;
+}
+
+.bio-sticker {
+bottom: 12px;
+left: 12px;
+font-size: 9px;
 }
 
 footer {
-padding: 35px;
-font-size: 11px;
-letter-spacing: 0.06em;
+padding: 35px 20px 25px;
 }
+
+.footer-statement {
+font-size: 16vw;
+}
+
+.footer-symbol {
+font-size: 40px;
+}
+
+.footer-bottom {
+margin-top: 70px;
+font-size: 9px;
+flex-wrap: wrap;
+gap: 20px;
+}
+}
+
 </style>
 </head>
 
 <body>
+
+<!-- HEADER -->
 
 <header>
 
@@ -130,59 +513,107 @@ KIMIYA RAHPAYMA
 
 </header>
 
+<!-- HERO -->
 
 <section class="hero">
 
+<div class="bio-symbol">✳</div>
+
+<div class="hero-title">
 <h1>
-KIMIYA<br>
-RAHPAYMA
+<span>KIMIYA</span>
+<span>RAHPAYMA</span>
 </h1>
+</div>
+
+<div class="hero-bottom">
 
 <div class="intro">
 Artist and sculptor working across sculpture, functional objects and visual narratives. My practice explores the body, intimacy, transformation, and the strange feeling of carrying a home within oneself.
 </div>
 
+<div class="intro-meta">
+ARTIST / SCULPTOR<br>
+TEHRAN, IRAN<br>
+ARCHIVE: 2022—∞
+</div>
+
+</div>
+
 </section>
 
+<!-- PINK INTERRUPTION -->
 
-<section class="work">
+<section class="interruption">
+<p>SOME THINGS HAVE BEEN WAITING TO BE BORN.</p>
+</section>
 
-<img src="./IMG_4916.JPG" alt="Kimiya Rahpayma — artwork">
+<!-- MY WANDERING HEAD -->
+
+<section class="work wandering">
+
+<div class="work-label">
+<span>01 / SCULPTURE</span>
+<span class="work-number">2025</span>
+</div>
+
+<div class="wandering-image">
+<img src="./IMG_4916.JPG" alt="My Wandering Head — Kimiya Rahpayma">
+</div>
 
 <div class="work-info">
 
 <div>
-<div class="work-title" style="color: #8B1111;">
-My Wandering Head
-</div>
+<div class="work-title">My Wandering Head</div>
 <div class="work-year">2025</div>
 </div>
 
-<div>
-Sculpture
+<div class="work-medium">
+SCULPTURE
 </div>
 
 </div>
 
 </section>
 
-<section class="work">
+<!-- BIOLOGICAL HALLUCINATIONS -->
 
-<a href="Biological-Hallucinations.html" style="text-decoration: none; color: inherit;">
+<section class="work biological">
 
-<img src="./biological-hallucinations/IMG_2653.jpg" alt="Biological Hallucinations">
-
-<div class="work-info">
-
-<div>
-<div class="work-title" style="color: #8B1111;">
-Biological Hallucinations
-</div>
-<div class="work-year">2026</div>
+<div class="work-label">
+<span>02 / COLLECTION</span>
+<span class="work-number">2026</span>
 </div>
 
-<div>
-Sculpture / Collection
+<a href="Biological-Hallucinations.html" class="biological-link">
+
+<div class="bio-layout">
+
+<div class="bio-text">
+
+<h2 class="bio-heading">
+BIOLOGICAL<br>
+HALLUCINATIONS
+</h2>
+
+<div class="bio-description">
+A collection of curious little organisms born somewhere between biological fascination and the imaginary.
+<br><br>
+ARCHIVE 001—∞
+</div>
+
+<div class="bio-arrow">↗</div>
+
+</div>
+
+<div class="bio-image">
+
+<img src="./biological-hallucinations/IMG_2653.jpg" alt="Biological Hallucinations — specimen 001">
+
+<div class="bio-sticker">
+UNSTABLE CLASSIFICATION / UNKNOWN ORIGIN
+</div>
+
 </div>
 
 </div>
@@ -190,9 +621,31 @@ Sculpture / Collection
 </a>
 
 </section>
+
+<!-- FOOTER -->
+
 <footer>
 
-© KIMIYA RAHPAYMA
+<div class="footer-top">
+
+<div class="footer-statement">
+STILL<br>
+BECOMING.
+</div>
+
+<div class="footer-symbol">✳</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<div>© KIMIYA RAHPAYMA 2026</div>
+
+<div>
+<a href="contact.html">CONTACT ↗</a>
+</div>
+
+</div>
 
 </footer>
 
